@@ -1,6 +1,4 @@
-
-
-
+from __future__ import print_function
 from musthe import *
 
 def convertNoteMap(noteMap):
@@ -40,7 +38,7 @@ class Song(object):
 
     def exportTabs(self, noteMap):
         convertedNoteMap = convertNoteMap(noteMap)
-        invNoteMap = {v: k for k, v in convertedNoteMap.iteritems()}
+        invNoteMap = {v: k for k, v in convertedNoteMap.items()}
         tabs = []
         for note in self.noteList:
             try:
@@ -51,21 +49,21 @@ class Song(object):
         return tabs
 
     def printNotes(self):
-        print "--------------"
-        print self.name
+        print ("--------------")
+        print (self.name)
         for id, note in enumerate(self.noteList):
             if id in self.lineBreakList:
-                print ""
-            print str(note.letter)+str(note.accidental)+str(note.octave),
-        print "\n--------------"        
+                print("")
+            print(str(note.letter)+str(note.accidental)+str(note.octave),)
+        print ("\n--------------")
 
     def printTabs(self, tabs):
-        print "--------------"
-        print self.name
-        for id, tab in enumerate(tabs):
-            if id in self.lineBreakList:
-                print ""
-            print tab,
-        print "\n--------------"
+        print ("--------------")
+        print (self.name)
+        for idx, tab in enumerate(tabs):
+            if idx in self.lineBreakList:
+                print("")
+            print(tab, end=" ")
+        print ("\n--------------")
 
         
