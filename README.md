@@ -1,27 +1,30 @@
 # Harmonica Note Converter
 
-Harmonica Note converter aims to create a python library to convert notes or tabs for different kind of harmonicas. 
+**Harmonica Note Converter** aims to create a python library to convert notes or tabs for different kind of harmonicas. 
 It is based on [musthe](https://github.com/gciruelos/musthe).
 
 
-## Getting Started
+## Story
 
 Some of you know that I am an ameteur harmonica player and I love harmonicas. I usually play diatonic harmonicas but last time I have bought a chromatic harmonica, which has quite different tone and it is hard to find music notes for it.
 
-I am not the best at playing instruments however I am good at coding and music theory. That's why I decide to develop a tool to convert music notes for any instrument to notes for my harmonicas. I also create an modular structure to define new instruments.
+I am not the best at playing instruments. However, I am good at coding and music theory. That's why I decide to develop a tool to convert music notes for any instrument to notes for my harmonicas. I also create an modular structure to define new instruments.
+
+## Getting Started
 
 ### Installing 
 
 First, The source code of the project should be cloned to your PC.
 
-```
+```ss
 git clone https://github.com/mozanunal/harmonica-note-converter
 ```
 
 ### Demo
 
 To test this project in your computer, you should run following commands.
-```
+
+```sh
 cd harmonica-note-converter
 python3 test.py
 #python test.py
@@ -33,7 +36,7 @@ It is a video to demonstrate the tone shift feature of my code. It is quite easy
 
 ### Defining Instruments
 
-Example code of C tone diatonic harmonica.
+Example code of C tone diatonic harmonica. You should add your instrument to harmonica folder and add to init file.
 
 ```python
 diatonic_C = {
@@ -83,13 +86,14 @@ diatonic_C = {
 ### Converting Tab Between Instruments
 
 
-Following script is written to convert Game of thrones theme song tabs
-for diatonic C harmonica to chromatic harmonica tabs. In the first part, the tab string is converted to a song object. Then song exported for `swan1040` harmonica. Above this part, you have already learned to implement your instrument. 
+Following script is written to convert Game of Thrones theme song tabs
+for diatonic C harmonica to chromatic harmonica tabs. In the first part, the tab string is converted to a song object. Then song exported for `swan1040` harmonica. Above this part, you have already learned to implement your instrument. Now, you can export these notes as tab for your instrument.
+
 ```python
 from harmonica import swan1040, diatonic_C
 from song import Song
 
-gotTheme = Song("Got Theme")
+gotTheme = Song("GoT Theme")
 gotTheme.getFromTabs(
     diatonic_C,
 """
@@ -108,7 +112,7 @@ gotTheme.exportTabs(swan1040)
 Script output:
 
 ```python
-Got Theme
+GoT Theme
 --------------
 -7 -5 -6 7 -7 -5 -6 7 6
 7 5 6 -6 7 5 -6 6 -5
@@ -121,7 +125,7 @@ Got Theme
 
 ## Shifting the Tone
 
-The other feature which I implemented is tone shifting. It is possible to shift the tone of the song which you give the system. Probably it is quite easy task for real musicians, but it is always a challenge for me. It is quite easy to implememted it with code. In that why, I can easily change the tone of the songs which I want to play with my harmonica.
+The other feature which I implemented is tone shifting. It is possible to shift the tone of the song which you give to the system. Probably, it is quite easy task for real musicians, but it is always a challenge for me. It is quite easy to implememted it with code. In that why, I can easily change the tone of the songs which I want to play with my harmonica.
 
 Test script:
 
@@ -129,7 +133,7 @@ Test script:
 from harmonica import swan1040, diatonic_C
 from song import Song
 
-gotTheme = Song("Got Theme")
+gotTheme = Song("GoT Theme")
 gotTheme.getFromTabs(
     diatonic_C,
 """
@@ -154,7 +158,7 @@ gotTheme.shift(+14)
 Output is like:
 
 ```python
-Got Theme
+GoT Theme
 --------------
 -7 -5 -6 7 -7 -5 -6 7 6
 7 5 6 -6 7 5 -6 6 -5
@@ -164,7 +168,7 @@ Got Theme
 -9 -8* 7 -7 5 -6 6 -5
 --------------
 --------------
-Got Theme
+GoT Theme
 
 -3 -1 -2 3 -3 -1 -2 3 2
 3 1 2 -2 3 1 -2 2 -1
@@ -174,7 +178,7 @@ Got Theme
 -5 5 3 -3 1 -2 2 -1
 --------------
 --------------
-Got Theme
+GoT Theme
 
 -8 6 7 -7 -8 6 7 -7 -6* 
 -7 -5 -6* 7 -7 -5 7 -6* 6 
