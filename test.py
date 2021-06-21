@@ -149,5 +149,31 @@ lavienrose.getFromTabs(
 6 -6 -6 7 
 """
 )
-lavienrose.shift(-7)
+lavienrose.shift(-12)
 lavienrose.exportTabs(swan1040)
+
+engman = Song("english man in new york")
+engman.getFromTabs(
+    diatonic_C,
+"""
+8 7
+7 7 7 -7 -6 
+-7 -7 -8 -8  7 -7 -6
+-6 -7   7  7  7  -7   6  -6
+
+5 -6  7 -8 -7  6 -5 5 -7 -7 
+5 -6  7 -8 -7  6 -5 5 
+5 -6 7 -8 -7  6 -5  5 -7 -7 -6 -7
+-6 -7 7   7 -7 -6  6 -6 -6
+
+8  8  8  8  9  8    8 -8 -8 -8 -8 -9 -8
+7  7  7  7  8  8  7  7  -7
+-6 -6 -6 -6  7 -6   -6 -7  -7  -7  -7  -8  -7
+-7 -8 -8 -8 -8 -9  8 -8 -8  8
+"""
+)
+engman.shift(-12)
+engman.exportTabs(swan1040)
+
+
+
